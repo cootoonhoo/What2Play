@@ -1,3 +1,14 @@
 <div class="Container">
-  <p>Login Works!</p>
+  <form [formGroup]="loginForm">
+    <p class="title">
+      Entre na Savvy Store!
+    </p>
+    <hr>
+    <label>Usuário</label>
+    <input id="User" type="text" formControlName="user" placeholder="Digite seu usuario">
+    <label>Senha</label>
+    <input id="Password" type="password" formControlName="password" placeholder="Digite sua senha">
+    <button type="submit" (click)="authenticate()">Entrar</button>
+    <p class="error" *ngIf="hasUserFailedAuthentication">Usuário ou senha inválidos</p>
+  </form>
 </div>
