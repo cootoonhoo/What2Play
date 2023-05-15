@@ -3,4 +3,5 @@ export interface Game {
   rating : number;
   posterImg : string;
   description : string;
+  genre : string;
 }
