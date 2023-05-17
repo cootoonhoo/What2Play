@@ -73,4 +73,20 @@ export class GameAPIService {
       return [];
     }
   }
+
+  public async getRandomGameBackgrounds(): Promise<string[]> {
+    const url = `https://api.rawg.io/api/games?key=${this.apiKey}&page_size=33`;
+
+    try {
+      const response = await axios.get(url);
+      const games = response.data.results;
+
+      const gameBackgrounds = games.map((game: any) => game.background_image);
+
+      return gameBackgrounds;
+    } catch (error) {
+      console.error('Ocorreu um erro ao obter as imagens de fundo dos jogos:', error);
+      return [];
+    }
+  }
 }
