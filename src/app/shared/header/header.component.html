@@ -1,15 +1,15 @@
 <header>
   <div class="Content">
-    <div class="Logo">
+    <div class="Logo" (click)="redirectByUrl('')">
       <h1>Logo</h1>
     </div>
     <div class="Menu">
       <ul>
-        <li>Sobre nós</li>
+        <li (click)="redirectByUrl('about')">Sobre nós</li>
+        <li (click)="redirectByUrl('signup')">Cadastre-se</li>
         <div class="Login">
-          <li>Login</li>
+          <li (click)="redirectByUrl('login')">Login</li>
         </div>
-        <li>Cadastre-se</li>
       </ul>
     </div>
   </div>

@@ -1,0 +1,10 @@
+footer{
+  background-color: var(--primary-red);
+  color: white;
+  .Content{
+    margin : 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}

@@ -4,7 +4,18 @@
     <img [src]="image" alt="Game Cover">
   </div>
   <div class="overlay">
-    <h1>Texto sobreposto</h1>
+    <div class="Content">
+      <img src="../../../../assets/">
+      <h1>Logo</h1>
+      <h1>Descubra qual vai ser seu próximo jogo!</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Fugiat, ex in dignissimos quaerat nisi voluptatibus porro nulla,
+        quo vero earum minima accusamus tempora debitis, numquam illo enim corrupti. Corrupti, assumenda!
+      </p>
+      <button class="SaibaMais" (click)="redirectUrl('about')" >Saiba mais!</button>
+      <button class="Signup" (click)="redirectUrl('signup')">Cadastrar-se</button>
+    </div>
   </div>
 </div>
 <app-footer></app-footer>

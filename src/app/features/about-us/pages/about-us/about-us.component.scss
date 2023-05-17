@@ -1,0 +1,31 @@
+.Content{
+  color: white;
+  margin-top: 15vw;
+  .text{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    h1{
+      font-size: 22px;
+      text-align: center;
+      margin: 0;
+    }
+
+    p{
+      text-align: center;
+    }
+
+    div{
+      border: 1px white solid;
+      border-radius: 15px;
+      padding: 10px;
+      max-width:400px;
+
+      background-color: rgba($color: #000000, $alpha: .2);
+    }
+  }
+}

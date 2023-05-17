@@ -75,7 +75,7 @@ export class GameAPIService {
   }
 
   public async getRandomGameBackgrounds(): Promise<string[]> {
-    const url = `https://api.rawg.io/api/games?key=${this.apiKey}&page_size=33`;
+    const url = `https://api.rawg.io/api/games?key=${this.apiKey}&page_size=$30`;
 
     try {
       const response = await axios.get(url);
