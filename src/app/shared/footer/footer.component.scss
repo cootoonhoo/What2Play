@@ -1,10 +1,37 @@
 footer{
   background-color: var(--primary-red);
   color: white;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+
   .Content{
-    margin : 20px;
+    margin : 0px 20px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    gap: 10px;
+
+    a{
+      text-decoration: none;
+      color: white;
+      font-weight: 400;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .ContentBox1{
+      ul{
+        list-style-type: none;
+      }
+    }
+    .ContentBox2{
+      a{
+        margin: 0px 10px;
+      }
+    }
+  }
+  .hidden{
+    align-self: flex-end;
+    color: rgba($color: #ffffff, $alpha: 0.15);
   }
 }

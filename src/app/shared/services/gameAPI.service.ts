@@ -74,19 +74,21 @@ export class GameAPIService {
     }
   }
 
-  public async getRandomGameBackgrounds(): Promise<string[]> {
-    const url = `https://api.rawg.io/api/games?key=${this.apiKey}&page_size=$30`;
+  // A ideia era usa a API pra pegar as imgs, porém a api só retornarva 20 imgs e era muito lento
+  // Pensando nisso crieia a url-background-img
 
-    try {
-      const response = await axios.get(url);
-      const games = response.data.results;
+  // public async getRandomGameBackgrounds(): Promise<string[]> {
+  //   const url = `https://api.rawg.io/api/games?key=${this.apiKey}&page_size=$40`;
+  //   try {
+  //     const response = await axios.get(url);
+  //     const games = response.data.results;
 
-      const gameBackgrounds = games.map((game: any) => game.background_image);
-
-      return gameBackgrounds;
-    } catch (error) {
-      console.error('Ocorreu um erro ao obter as imagens de fundo dos jogos:', error);
-      return [];
-    }
-  }
+  //     const gameBackgrounds = games.map((game: any) => game.background_image);
+  //     console.log(gameBackgrounds)
+  //     return gameBackgrounds;
+  //   } catch (error) {
+  //     console.error('Ocorreu um erro ao obter as imagens de fundo dos jogos:', error);
+  //     return [];
+  //   }
+  // }
 }

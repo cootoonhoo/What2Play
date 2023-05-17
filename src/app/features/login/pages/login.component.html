@@ -1,8 +1,12 @@
 <div class="Container">
   <form [formGroup]="loginForm">
-    <p class="title">
-      Entre na Savvy Store!
-    </p>
+    <div class="icon" (click)="redirectByUrl('')">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </div>
+    <img src="../../../../assets/WhatToPlay_Logo.png">
+    <h1 class="title">
+      Login
+    </h1>
     <hr>
     <label>Usuário</label>
     <input id="User" type="text" formControlName="user" placeholder="Digite seu usuario">

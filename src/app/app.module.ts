@@ -9,6 +9,7 @@ import { InicialPageModule } from './features/inicial-page/inicial-page.module';
 import { SingupModule } from './features/singup/signup.module';
 import { LoginModule } from './features/login/login.module';
 import { AboutUsModule } from './features/about-us/about-us.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { AboutUsModule } from './features/about-us/about-us.module';
     InicialPageModule,
     SingupModule,
     LoginModule,
-    AboutUsModule
+    AboutUsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
