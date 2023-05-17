@@ -4,6 +4,7 @@ import { SignupComponent } from './pages/signup.component';
 import { ImagePerfSelectorComponent } from './components/image-perf-selector/image-perf-selector.component';
 import { PersonalDataFormComponent } from './components/personal-data-form/personal-data-form.component';
 import { PreferencesDataFormComponent } from './components/preferences-data-form/preferences-data-form.component';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -15,7 +16,8 @@ import { PreferencesDataFormComponent } from './components/preferences-data-form
     PreferencesDataFormComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatIconModule
   ],
   exports : [
     SignupComponent

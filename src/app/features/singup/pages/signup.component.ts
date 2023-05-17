@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { FormMannagerService } from './../services/form-mannager.service';
 import { Component } from '@angular/core';
 
@@ -6,9 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
-  public signupStep = 1;
+  public signupStep = 2;
 
-  constructor(private formMannagerService : FormMannagerService) {
+  constructor(
+    private formMannagerService : FormMannagerService,
+    private router : Router
+    ) {
     formMannagerService.ChangeStep$.subscribe( (stepNumber) =>{
       if(stepNumber == 4){
         window.alert('Deu certo');
@@ -19,6 +23,9 @@ export class SignupComponent {
       else
         this.signupStep = stepNumber;
     });
+  }
 
+  redirectByUrl(url : string){
+    this.router.navigateByUrl(`${url}`);
   }
 }

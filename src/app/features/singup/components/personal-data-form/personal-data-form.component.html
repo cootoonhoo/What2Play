@@ -1,2 +1,17 @@
-<p>personal-data-form works!</p>
+<form (formGroup)="perosnalData">
+  <h1>Dados pessoais</h1>
+  <hr>
+  <label>Nome</label>
+  <input id="FirstName" type="text" formControlName="firstName" placeholder="Digite seu nome">
+  <label>Sobrenome</label>
+  <input id="LastName" type="text" formControlName="lastName" placeholder="Digite seu sobrenome">
+  <label>Email</label>
+  <input id="Email" type="text" formControlName="email" placeholder="Digite seu email">
+  <label>Usuário</label>
+  <input id="User" type="text" formControlName="user" placeholder="Digite seu email">
+  <label>Senha</label>
+  <input id="Password" type="password" formControlName="password" placeholder="Digite sua senha">
+  <label>Confirme sua senha</label>
+  <input id="ConfirmPassord" type="password" formControlName="confirmPassword" placeholder="Confirme sua senha">
+</form>
 <button (click)="nextStep()">Continuar</button>

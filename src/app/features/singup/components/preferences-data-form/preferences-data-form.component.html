@@ -1,8 +1,8 @@
 <form>
-  <label>Usuário</label>
-  <label>Senha</label>
-  <label>Confirmar senha</label>
-  <label>Nome</label>
-  <label>Sobrenome</label>
+  <div class="genres">
+    <label class="genreBox" *ngFor="let genre of genres" (click)="onClickGenre(genre)" [ngClass]="{'selected' : selectedGenres.includes(genre)}">
+      {{ genre }}
+    </label>
+  </div>
 </form>
 <button (click)="nextStep()">Continuar</button>

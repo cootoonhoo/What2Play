@@ -1,15 +1,18 @@
-
-<p>singup works!</p>
-{{ signupStep }}
 <div class="Content">
-  <div *ngIf="signupStep === 1">
-    <app-personal-data-form ></app-personal-data-form>
-  </div>
-  <div *ngIf="signupStep === 2">
-    <app-preferences-data-form ></app-preferences-data-form>
-  </div>
-  <div *ngIf="signupStep === 3">
-    <app-image-perf-selector ></app-image-perf-selector>
+  <div class="forms">
+    <div class="icon" (click)="redirectByUrl('')">
+      <mat-icon>keyboard_arrow_left</mat-icon>
+    </div>
+    <h1>Cadastro</h1>
+    <div *ngIf="signupStep === 1">
+      <app-personal-data-form ></app-personal-data-form>
+    </div>
+    <div *ngIf="signupStep === 2">
+      <app-preferences-data-form ></app-preferences-data-form>
+    </div>
+    <div *ngIf="signupStep === 3">
+      <app-image-perf-selector ></app-image-perf-selector>
+    </div>
   </div>
 </div>
 

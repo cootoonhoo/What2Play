@@ -1,0 +1,43 @@
+.Content{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .forms{
+    width: 500px;
+    height: auto;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    border: solid 1px var(--primary-red);
+
+    h1{
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+    }
+
+    .icon{
+      justify-self: flex-start;
+      align-self: flex-start;
+      width: 40px;
+      height: 40px;
+
+      mat-icon{
+        font-size: 40px;
+        width: auto;
+        height: auto;
+        color: var(--primary-red);
+      }
+
+      &:hover{
+        cursor: pointer;
+        background-color: rgba($color: #000000, $alpha: .3);
+        border-radius: 100px;
+      }
+    }
+  }
+}

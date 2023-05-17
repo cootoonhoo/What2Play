@@ -1,0 +1,38 @@
+form{
+  --selected : #07d700c1;
+
+  .genres{
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin: none;
+    gap: 10px;
+
+    .genreBox{
+      background-color: rgba($color: white, $alpha: 0.05);
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid var(--primary-blue);
+      cursor: pointer;
+
+      transition: all 150ms;
+
+      &:hover{
+        background-color: var(--primary-blue);
+      }
+    }
+
+    .selected{
+      background: var(--selected);
+      border: 1px solid var(--selected);
+
+      &:hover{
+        background: var(--selected);
+        border: 1px solid var(--selected);
+      }
+    }
+  }
+}
