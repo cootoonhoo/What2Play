@@ -31,7 +31,6 @@ export class LoginComponent {
       this.hasUserFailedAuthentication = true;
       return;
     }
-    sessionStorage.setItem('user',JSON.stringify(user))
     this.redirectByUrl('browser');
   }
 

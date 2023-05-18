@@ -1,0 +1,17 @@
+<div class="Content">
+  <img [src]="thisGame.posterImg">
+  <h2> {{thisGame.title}}</h2>
+  <hr>
+  <div class="Info">
+    <div>
+      <h3>Data de lançamento</h3>
+      <p> {{ thisGame.relaseDate | date:'MMM, YYYY' }}</p>
+    </div>
+    <div class="Avaliacao">
+      <p> {{ thisGame.rating  | rating }}</p>
+    </div>
+  </div>
+  <div class="Descricao">
+    <p> {{ thisGame.description}}</p>
+  </div>
+</div>

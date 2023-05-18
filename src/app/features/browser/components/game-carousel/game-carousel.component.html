@@ -1,0 +1,12 @@
+<div class="Container">
+  <h1>Genero</h1>
+  <div class="GameSelection">
+    <div class="Game" *ngFor="let game of gamesList" >
+      <div class="GameImageContainer" (click)="openCard(game)">
+        <img [src]="game.posterImg">
+        <p class="GameTitle">{{ game.title }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -3,7 +3,7 @@
     <div class="Logo" (click)="redirectByUrl('')">
       <img src="../../../assets/WhatToPlay_Logo.png">
     </div>
-    <div class="Menu">
+    <div class="Menu" *ngIf="!userLogged">
       <ul>
         <li (click)="redirectByUrl('about')">Sobre nós</li>
         <li (click)="redirectByUrl('signup')">Cadastre-se</li>
@@ -11,6 +11,11 @@
           <li (click)="redirectByUrl('login')">Login</li>
         </div>
       </ul>
+    </div>
+    <div class="Logged" *ngIf="userLogged">
+      <a (click)="logout()" >Sair</a>
+      <a (click)="redirectByUrl('browser')" >Minha lista</a>
+      <img [src]="this.user.perfilIcon">
     </div>
   </div>
 </header>

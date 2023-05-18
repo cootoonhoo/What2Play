@@ -58,4 +58,25 @@ header {
       }
     }
   }
+
+  .Logged{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    img{
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      border: 2px solid var(--primary-red);
+    }
+
+    a{
+      cursor: pointer;
+      &:hover{
+        color: var(--primary-red);
+      }
+    }
+  }
 }
