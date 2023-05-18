@@ -68,5 +68,6 @@ export class SignupComponent {
       }
     }
     this.authentication.createUser(NewUser);
+    this.redirectByUrl('login')
   }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { LoginData } from '../models/loginData.model';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 
 @Component({
   templateUrl: './login.component.html',
@@ -9,12 +10,15 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   loginForm = new FormGroup({
-    user : new FormControl('',Validators.required),
+    username : new FormControl('',Validators.required),
     password : new FormControl('',Validators.required),
   })
   hasUserFailedAuthentication : boolean = false;
 
-  constructor(private router : Router) {
+  constructor(
+    private router : Router,
+    private authentication : AuthenticationService
+    ) {
 
   }
 
@@ -22,8 +26,13 @@ export class LoginComponent {
     const formData = this.loginForm.value as LoginData;
     const username = formData.username;
     const password = formData.password;
-    window.alert("Aplicativo em desenvolvimento");
-    this.hasUserFailedAuthentication = true;
+    const user = this.authentication.loginUser(username,password);
+    if(!user){
+      this.hasUserFailedAuthentication = true;
+      return;
+    }
+    sessionStorage.setItem('user',JSON.stringify(user))
+    this.redirectByUrl('browser');
   }
 
   redirectByUrl(url : string){

@@ -19,17 +19,10 @@ export class AuthenticationService {
   createUser(newUser : User){
     newUser.id = this.users.length + 1;
     this.users.push(newUser);
+    sessionStorage.setItem('user', JSON.stringify(newUser))
   }
 
-  loginUser(username : string, password : string) : boolean {
-    let validation = false;
-    this.users.forEach( user => {
-      if(user.username == username){
-        if(user.password == password){
-          validation = true;
-        }
-      }
-    })
-    return validation;
+  loginUser(username : string, password : string){
+    return this.users.find( (user) => user.username === username && user.password === password);
   }
 }

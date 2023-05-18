@@ -24,7 +24,6 @@ export class PersonalDataFormComponent {
 
   nextStep(){
     const PersonalData = this.signUpForm.value as PersonalData;
-    console.log(PersonalData)
     if(PersonalData.password != PersonalData.confirmPassword){
       this.samePassword = true;
       return;
