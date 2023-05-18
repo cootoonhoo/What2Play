@@ -17,7 +17,7 @@ export class AuthenticationService {
   }
 
   createUser(newUser : User){
-    newUser.id = this.users[this.users.length - 1].id! + 1;
+    newUser.id = this.users.length + 1;
     this.users.push(newUser);
   }
 

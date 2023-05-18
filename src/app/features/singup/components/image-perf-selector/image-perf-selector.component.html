@@ -1,2 +1,25 @@
-<p>image-perf-selector works!</p>
-<button (click)="nextStep()">Começar!</button>
+<div class="Content">
+  <h1>Selecione um avatar</h1>
+  <hr>
+  <div class="Icons">
+    <div class="AvatarSelection" [ngClass]="{'Selected':iconSelected === 1}" (click)="clickSelection(1)">
+      <img src="../../../../../assets/Avatar/avatar1.png">
+    </div>
+    <div class="AvatarSelection" [ngClass]="{'Selected' : iconSelected === 2}" (click)="clickSelection(2)">
+      <img src="../../../../../assets/Avatar/avatar2.png">
+    </div>
+    <div class="AvatarSelection" [ngClass]="{'Selected' : iconSelected === 3}" (click)="clickSelection(3)">
+      <img src="../../../../../assets/Avatar/avatar3.png">
+    </div>
+    <div class="AvatarSelection" [ngClass]="{'Selected' : iconSelected === 4}" (click)="clickSelection(4)">
+      <img src="../../../../../assets/Avatar/avatar4.png">
+    </div>
+    <div class="AvatarSelection" [ngClass]="{'Selected' : iconSelected === 5}" (click)="clickSelection(5)">
+      <img src="../../../../../assets/Avatar/avatar5.png">
+    </div>
+    <div class="AvatarSelection" [ngClass]="{'Selected' : iconSelected === 6}" (click)="clickSelection(6)">
+      <img src="../../../../../assets/Avatar/avatar6.png">
+    </div>
+  </div>
+  <button (click)="nextStep()">Continuar</button>
+</div>

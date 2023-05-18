@@ -9,21 +9,26 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./personal-data-form.component.scss']
 })
 export class PersonalDataFormComponent {
-  personalDataForm = new FormGroup({
-    user : new FormControl<string>('',Validators.required),
-    password : new FormControl<string>('',[Validators.required,Validators.minLength(8)]),
-    confirmPassword : new FormControl<string>('',[Validators.required,Validators.minLength(8)]),
-    email : new FormControl<string>('',[Validators.required,Validators.email]),
-    firstName : new FormControl<string>('',Validators.required),
-    lastName : new FormControl<string>('',Validators.required),
+  samePassword = false;
+  signUpForm: FormGroup = new FormGroup({
+    user : new FormControl('',Validators.required),
+    password : new FormControl('', [Validators.required,Validators.minLength(8)]),
+    confirmPassword : new FormControl('',Validators.required),
+    email : new FormControl('',[Validators.required, Validators.email]),
+    firstName : new FormControl('',Validators.required),
+    lastName : new FormControl('',[Validators.required])
   });
 
   constructor(private formMannagerService : FormMannagerService) {
-
   }
 
   nextStep(){
-    const PersonalData = this.personalDataForm.value as PersonalData;
+    const PersonalData = this.signUpForm.value as PersonalData;
+    console.log(PersonalData)
+    if(PersonalData.password != PersonalData.confirmPassword){
+      this.samePassword = true;
+      return;
+    }
     this.formMannagerService.emitPersonalData(PersonalData);
     this.formMannagerService.emitChangeStep(2);
   }

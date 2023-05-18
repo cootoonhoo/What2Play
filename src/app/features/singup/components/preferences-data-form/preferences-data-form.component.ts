@@ -18,7 +18,6 @@ export class PreferencesDataFormComponent{
   genres! : string[];
   selectedGenres : string[] = [];
   genreSelection : boolean = true;
-  gameList : Array<Game> = []
 
   constructor(
     private formMannagerService : FormMannagerService,
@@ -33,21 +32,20 @@ export class PreferencesDataFormComponent{
 
     }
 
-  nextStep(){
-    this.formMannagerService.emitChangeStep(3);
+    onClickGenre(genre: string){
+      if(this.selectedGenres.includes(genre)){
+        const pos = this.selectedGenres.indexOf(genre);
+        this.selectedGenres.splice(pos,1);
+      }
+      else {
+        this.selectedGenres.push(genre);
+      }
+      if(this.selectedGenres.length >= 6){
+        this.selectedGenres = this.selectedGenres.splice(1,6)
+      }
+    }
+    nextStep(){
+      this.formMannagerService.emitGenres(this.selectedGenres);
+      this.formMannagerService.emitChangeStep(3);
+    }
   }
-
-  onClickGenre(genre: string){
-    if(this.selectedGenres.includes(genre)){
-      const pos = this.selectedGenres.indexOf(genre);
-      this.selectedGenres.splice(pos,1);
-    }
-    else {
-      this.selectedGenres.push(genre);
-    }
-    if(this.selectedGenres.length >= 6){
-      this.selectedGenres = this.selectedGenres.splice(1,6)
-    }
-    console.log(this.selectedGenres);
-  }
-}

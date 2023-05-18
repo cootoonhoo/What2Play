@@ -7,12 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./image-perf-selector.component.scss']
 })
 export class ImagePerfSelectorComponent {
-
+  iconSelected = 1;
   constructor(private formMannagerService : FormMannagerService) {
 
   }
 
+  clickSelection(num : number){
+    this.iconSelected = num;
+  }
+
   nextStep(){
-    this.formMannagerService.emitChangeStep(4)
+    this.formMannagerService.emitPerfilImg(`../../../../../assets/Avatar/avatar${this.iconSelected}.png`)
+    this.formMannagerService.emitChangeStep(5);
   }
 }

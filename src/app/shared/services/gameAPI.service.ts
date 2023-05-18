@@ -47,6 +47,7 @@ export class GameAPIService {
             description: description,
             posterImg: game.background_image,
             genre: genre,
+            relaseDate : game.released
           }
           return selectedGame;
         })
@@ -84,7 +85,6 @@ export class GameAPIService {
   //     const games = response.data.results;
 
   //     const gameBackgrounds = games.map((game: any) => game.background_image);
-  //     console.log(gameBackgrounds)
   //     return gameBackgrounds;
   //   } catch (error) {
   //     console.error('Ocorreu um erro ao obter as imagens de fundo dos jogos:', error);

@@ -4,4 +4,5 @@ export interface Game {
   posterImg : string;
   description : string;
   genre : string;
+  relaseDate:string;
 }

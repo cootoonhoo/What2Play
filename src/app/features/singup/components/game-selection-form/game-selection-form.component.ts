@@ -12,6 +12,7 @@ export class GameSelectionFormComponent {
 
   @Input() genresList : Array<string> = [];
   gameList : Array<Game> = [];
+  selectedGameList : Array<Game> = [];
 
   constructor(
     private formManagerService : FormMannagerService,
@@ -19,17 +20,16 @@ export class GameSelectionFormComponent {
     ) {
     }
 
-    ngAfterViewChecked(){
+    ngAfterContentInit(){
       this.iniciateGameSelection();
-  }
+    }
 
-  iniciateGameSelection(){;
-    this.gameList = this.populateGameSelection(this.genresList);
+    iniciateGameSelection(){;
+      this.gameList = this.populateGameSelection(this.genresList);
   }
 
   populateGameSelection(genres : Array<string>) : Array<Game>{
     const gameListResult = new Array<Game>();
-    console.log(genres);
     genres.forEach(genre => {
       this.gameAPIService.searchGamesByGenre(genre,3).then(
         (data) => {
@@ -39,7 +39,26 @@ export class GameSelectionFormComponent {
         }
       )
     });
-    console.log(gameListResult);
     return gameListResult;
+  }
+
+  onSelectionClick(game : Game){
+    if(this.selectedGameList.includes(game)){
+      const pos = this.selectedGameList.indexOf(game);
+      this.selectedGameList.splice(pos,1);
+    }
+    else {
+      this.selectedGameList.push(game);
+    }
+  }
+
+  nextStepDry(){
+    this.formManagerService.emitGames(new Array<Game>());
+    this.formManagerService.emitChangeStep(4);
+  }
+
+  nextStep(){
+    this.formManagerService.emitGames(this.selectedGameList);
+    this.formManagerService.emitChangeStep(4);
   }
 }

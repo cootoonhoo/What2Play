@@ -1,1 +1,14 @@
-<p>game-selection-form works!</p>
+<div class="Content">
+  <h1>Selecione alguns jogos</h1>
+  <h2>Para ajudar nas nossas sugestões</h2>
+  <div class="GameSelection">
+    <div class="Game" *ngFor="let game of gameList" [ngClass]="{ 'selected': selectedGameList.includes(game) }">
+      <div class="GameImageContainer" (click)="onSelectionClick(game)">
+        <img [src]="game.posterImg">
+        <p class="GameTitle">{{ game.title }}</p>
+      </div>
+    </div>
+  </div>
+  <button (click)="nextStep()">Continuar</button>
+  <button (click)="nextStepDry()">Seguir com nenhum</button>
+</div>

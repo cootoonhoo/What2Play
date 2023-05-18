@@ -7,16 +7,18 @@
   .game-tile {
     margin: 5px;
     padding: 5px;
+
+    img {
+      width: 200px;
+      height: 300px;
+      object-fit: cover;
+
+      border-radius: 5px;
+      border: 1px solid var(--primary-red);
+    }
   }
 
-  .game-tile img {
-    width: 200px;
-    height: 300px;
-    object-fit: cover;
 
-    border-radius: 5px;
-    border: 1px solid var(--primary-red);
-  }
 
 }
 

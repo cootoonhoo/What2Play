@@ -1,0 +1,54 @@
+.Content{
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+
+  hr{
+    width: 100%;
+  }
+
+  .Icons{
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .AvatarSelection{
+      margin: 20px;
+      img{
+        border: 3px solid #ffffff00;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+    }
+
+    .Selected{
+      img{
+        border: 3px solid var(--primary-blue);
+      }
+    }
+  }
+
+}
+
+button {
+  font-size: 16px;
+  font-weight: 700;
+  padding: 15px 20px;
+  margin: 20px;
+  background: none;
+  border-radius: 10px;
+  border: 2px solid var(--primary-red);
+  color:white;
+  cursor: pointer;
+  transition: all 150ms;
+  justify-self: center;
+
+  &:hover{
+    border: 2px solid var(--primary-red);
+    background-color: var(--primary-red);
+  }
+}

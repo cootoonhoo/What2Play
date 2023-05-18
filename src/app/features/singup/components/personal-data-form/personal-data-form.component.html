@@ -1,17 +1,35 @@
-<form (formGroup)="personalDataForm">
+<form [formGroup]="signUpForm">
   <h1>Dados pessoais</h1>
   <hr>
   <label>Nome</label>
-  <input id="FirstName" type="text" formControlName="firstName" placeholder="Digite seu nome">
+  <input id="FirstName" type="text" formControlName="firstName" placeholder="Digite seu Nome">
+  <div class="error" *ngIf=" signUpForm.controls['firstName'].errors != null && signUpForm.controls['firstName'].touched">
+    Nome é obrigatório!
+  </div>
   <label>Sobrenome</label>
-  <input id="LastName" type="text" formControlName="lastName" placeholder="Digite seu sobrenome">
+  <input id="LastName" type="text" formControlName="lastName" placeholder="Digite seu Sobrenome">
+  <div class="error" *ngIf=" signUpForm.controls['lastName'].errors != null && signUpForm.controls['lastName'].touched">
+    Sobrenome é obrigatório!
+  </div>
   <label>Email</label>
   <input id="Email" type="text" formControlName="email" placeholder="Digite seu email">
+  <div class="error" *ngIf=" signUpForm.controls['email'].errors != null && signUpForm.controls['email'].errors!['email']">
+    Email inválido!
+  </div>
   <label>Usuário</label>
-  <input id="User" type="text" formControlName="user" placeholder="Digite seu email">
+  <input id="User" type="text" formControlName="user" placeholder="Digite seu usuário">
+  <div class="error" *ngIf=" signUpForm.controls['user'].errors != null && signUpForm.controls['user'].touched">
+    Usuário é obrigatório!
+  </div>
   <label>Senha</label>
   <input id="Password" type="password" formControlName="password" placeholder="Digite sua senha">
+  <div class="error" *ngIf=" signUpForm.controls['password'].errors != null && signUpForm.controls['password'].errors!['minlength']">
+    A senha deve ter pelo menos 8 caracteres!
+  </div>
   <label>Confirme sua senha</label>
   <input id="ConfirmPassord" type="password" formControlName="confirmPassword" placeholder="Confirme sua senha">
+  <div class="error" *ngIf="samePassword">
+    As senhas não são iguais!
+  </div>
 </form>
-<button (click)="nextStep()">Continuar</button>
+<button (click)="nextStep()" [disabled]="signUpForm.invalid">Continuar</button>
