@@ -1,8 +1,13 @@
 <form>
-  <div class="genres">
-    <label class="genreBox" *ngFor="let genre of genres" (click)="onClickGenre(genre)" [ngClass]="{'selected' : selectedGenres.includes(genre)}">
-      {{ genre }}
-    </label>
+  <h1>Preferências</h1>
+  <div>
+    <p>Selecione de 3 a 5 gêneros</p>
+    <hr>
+    <div class="genres">
+      <label class="genreBox" *ngFor="let genre of genres" (click)="onClickGenre(genre)" [ngClass]="{'selected' : selectedGenres.includes(genre)}">
+        {{ genre }}
+      </label>
+    </div>
   </div>
+  <button (click)="nextStep()" [disabled]="selectedGenres.length < 3" >Continuar</button>
 </form>
-<button (click)="nextStep()">Continuar</button>

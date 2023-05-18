@@ -2,6 +2,7 @@ import { GameAPIService } from './../../../../shared/services/gameAPI.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { FormMannagerService } from '../../services/form-mannager.service';
+import { Game } from 'src/app/shared/model/game.model';
 
 @Component({
   selector: 'app-preferences-data-form',
@@ -16,6 +17,8 @@ export class PreferencesDataFormComponent{
 
   genres! : string[];
   selectedGenres : string[] = [];
+  genreSelection : boolean = true;
+  gameList : Array<Game> = []
 
   constructor(
     private formMannagerService : FormMannagerService,
@@ -37,16 +40,14 @@ export class PreferencesDataFormComponent{
   onClickGenre(genre: string){
     if(this.selectedGenres.includes(genre)){
       const pos = this.selectedGenres.indexOf(genre);
-      delete this.selectedGenres[pos];
+      this.selectedGenres.splice(pos,1);
     }
     else {
       this.selectedGenres.push(genre);
     }
+    if(this.selectedGenres.length >= 6){
+      this.selectedGenres = this.selectedGenres.splice(1,6)
+    }
     console.log(this.selectedGenres);
-  }
-
-  hasBeenSelected(genre : string){
-    console.log(this.selectedGenres.includes(genre));
-    return this.selectedGenres.includes(genre);
   }
 }

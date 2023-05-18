@@ -1,3 +1,4 @@
+import { PersonalData } from './../../models/personalData.model';
 import { Component } from '@angular/core';
 import { FormMannagerService } from '../../services/form-mannager.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -8,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./personal-data-form.component.scss']
 })
 export class PersonalDataFormComponent {
-  perosnalData = new FormGroup({
+  personalDataForm = new FormGroup({
     user : new FormControl<string>('',Validators.required),
     password : new FormControl<string>('',[Validators.required,Validators.minLength(8)]),
     confirmPassword : new FormControl<string>('',[Validators.required,Validators.minLength(8)]),
@@ -22,6 +23,8 @@ export class PersonalDataFormComponent {
   }
 
   nextStep(){
-    this.formMannagerService.emitChangeStep(2)
+    const PersonalData = this.personalDataForm.value as PersonalData;
+    this.formMannagerService.emitPersonalData(PersonalData);
+    this.formMannagerService.emitChangeStep(2);
   }
 }

@@ -11,6 +11,9 @@
       <app-preferences-data-form ></app-preferences-data-form>
     </div>
     <div *ngIf="signupStep === 3">
+      <app-game-selection-form [genresList]="genresUser"></app-game-selection-form>
+    </div>
+    <div *ngIf="signupStep === 4">
       <app-image-perf-selector ></app-image-perf-selector>
     </div>
   </div>

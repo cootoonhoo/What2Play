@@ -31,8 +31,8 @@ export class GameAPIService {
     }
   }
 
-  public async searchGamesByGenre(genre: string): Promise<Game[]> {
-    const url = `https://api.rawg.io/api/games?key=${this.apiKey}&genres=${genre}&page_size=10`;
+  public async searchGamesByGenre(genre: string, quantity : number): Promise<Game[]> {
+    const url = `https://api.rawg.io/api/games?key=${this.apiKey}&genres=${genre.toLowerCase()}&page_size=${quantity}`;
 
     try {
       const response = await axios.get(url);
