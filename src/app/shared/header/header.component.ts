@@ -25,7 +25,7 @@ export class HeaderComponent {
 
   logout(){
     this.authenticationService.logout();
-    this.redirectByUrl('')
+    location.reload();
   }
 
   redirectByUrl(url : string){

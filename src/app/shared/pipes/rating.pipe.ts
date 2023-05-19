@@ -6,8 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class RatingPipe implements PipeTransform {
 
   transform(value: number): string {
-    const numberValue : number = Math.round(value);
-    return `${numberValue * 2}/10`;
+    return `${Math.round(value * 2)}/10`;
   }
 
 }

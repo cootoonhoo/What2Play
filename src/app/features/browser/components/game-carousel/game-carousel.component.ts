@@ -18,7 +18,6 @@ export class GameCarouselComponent {
     private gameAPIService : GameAPIService,
     public dialog : MatDialog
     ) {
-    this.gamesGenre = 'action';
   }
 
   ngAfterContentInit(){

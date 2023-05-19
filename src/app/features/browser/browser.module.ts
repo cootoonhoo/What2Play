@@ -5,8 +5,8 @@ import { BrowserComponent } from './pages/browser.component';
 import { GameCarouselComponent } from './components/game-carousel/game-carousel.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import {MatDialogModule} from '@angular/material/dialog';
-import { MainBannerComponent } from './components/main-banner/main-banner.component';
 import { CardGameComponent } from './components/card-game/card-game.component';
+import { MatIconModule } from '@angular/material/icon';
 
 const router : Routes = [
   {path:'', component: BrowserComponent}
@@ -16,14 +16,14 @@ const router : Routes = [
   declarations: [
     BrowserComponent,
     GameCarouselComponent,
-    MainBannerComponent,
     CardGameComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(router),
     SharedModule,
-    MatDialogModule
+    MatDialogModule,
+    MatIconModule
   ],
   exports: [
     RouterModule

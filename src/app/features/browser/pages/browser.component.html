@@ -1,2 +1,8 @@
 <app-header></app-header>
-<app-game-carousel></app-game-carousel>
+<body>
+  <div class="AppContent">
+    <app-game-carousel *ngFor="let genre of genresUser" [gamesGenre]="genre"></app-game-carousel>
+  </div>
+</body>
+
+

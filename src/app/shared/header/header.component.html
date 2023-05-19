@@ -15,7 +15,8 @@
     <div class="Logged" *ngIf="userLogged">
       <a (click)="logout()" >Sair</a>
       <a (click)="redirectByUrl('browser')" >Minha lista</a>
-      <img [src]="this.user.perfilIcon">
+      <a class="BemVindo" (click)="redirectByUrl('browser')"> {{ user.firstName }}</a>
+      <img [src]="user.perfilIcon">
     </div>
   </div>
 </header>

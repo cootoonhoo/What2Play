@@ -1,6 +1,7 @@
 <div class="Content">
   <h1>Selecione alguns jogos</h1>
   <h2>Para ajudar nas nossas sugestões</h2>
+  <hr>
   <div class="GameSelection">
     <div class="Game" *ngFor="let game of gameList" [ngClass]="{ 'selected': selectedGameList.includes(game) }">
       <div class="GameImageContainer" (click)="onSelectionClick(game)">
